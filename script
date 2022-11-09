@@ -1,0 +1,188 @@
+Public Class Form1
+    Dim angka1 As Double
+    Dim [operator] As String
+    Dim baru As Boolean = True
+    Dim temp As Double
+    Dim angka2 As Double
+
+    Private Sub Btn1_Click(sender As Object, e As EventArgs) Handles Btn1.Click, Btn2.Click, Btn3.Click, Btn4.Click, Btn5.Click,
+        Btn6.Click, Btn7.Click, Btn8.Click, Btn9.Click, Btn0.Click
+        TxtAngka.Text = TxtAngka.Text & sender.Text
+
+    End Sub 'Untuk memasukkan nilai dari tombol angka yang kita tekan ke TxtAngka
+
+    Private Sub BtnTambah_Click(sender As Object, e As EventArgs) Handles BtnTambah.Click
+        If baru = True Then
+            angka1 = Val(TxtAngka.Text)
+            TxtAngka.Text = ""
+            TxtAngka.Focus()
+            [operator] = "+"
+        ElseIf baru = False Then
+            If [operator] = "+" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "+"
+            ElseIf [operator] = "-" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "+"
+            ElseIf [operator] = "*" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "+"
+            ElseIf [operator] = ":" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "+"
+            End If
+        End If
+        baru = False
+    End Sub
+    Private Sub BtnKurang_Click(sender As Object, e As EventArgs) Handles BtnKurang.Click
+        If baru = True Then
+            angka1 = Val(TxtAngka.Text)
+            TxtAngka.Text = ""
+            TxtAngka.Focus()
+            [operator] = "-"
+        ElseIf baru = False Then
+            If [operator] = "+" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "-"
+            ElseIf [operator] = "-" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "-"
+            ElseIf [operator] = "*" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "-"
+            ElseIf [operator] = ":" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "-"
+            End If
+        End If
+        baru = False
+    End Sub
+
+    Private Sub BtnKali_Click(sender As Object, e As EventArgs) Handles BtnKali.Click
+        If baru = True Then
+            angka1 = Val(TxtAngka.Text)
+            TxtAngka.Text = ""
+            TxtAngka.Focus()
+            [operator] = "*"
+        ElseIf baru = False Then
+            If [operator] = "+" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "*"
+            ElseIf [operator] = "-" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "*"
+            ElseIf [operator] = "*" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "*"
+            ElseIf [operator] = ":" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = "*"
+            End If
+        End If
+        baru = False
+    End Sub
+
+    Private Sub BtnBagi_Click(sender As Object, e As EventArgs) Handles BtnBagi.Click
+        If baru = True Then
+            angka1 = Val(TxtAngka.Text)
+            TxtAngka.Text = ""
+            TxtAngka.Focus()
+            [operator] = ":"
+        ElseIf baru = False Then
+            If [operator] = "+" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = ":"
+            ElseIf [operator] = "-" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = ":"
+            ElseIf [operator] = "*" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = ":"
+            ElseIf [operator] = ":" Then
+                temp = angka1 + Val(TxtAngka.Text)
+                angka1 = temp
+                TxtAngka.Text = ""
+                [operator] = ":"
+            End If
+        End If
+        baru = False
+    End Sub
+
+    Private Sub BtnSamaDengan_Click(sender As Object, e As EventArgs) Handles BtnSamaDengan.Click
+        Dim Hasil As Double
+        angka2 = Val(TxtAngka.Text)
+        Select Case [operator]
+            Case "+"
+                Hasil = angka1 + angka2
+                TxtAngka.Text = Hasil.ToString
+            Case "-"
+                Hasil = angka1 - angka2
+                TxtAngka.Text = Hasil.ToString
+            Case "*"
+                Hasil = angka1 * angka2
+                TxtAngka.Text = Hasil.ToString
+            Case ":"
+                Hasil = angka1 / angka2
+                TxtAngka.Text = Hasil.ToString
+        End Select
+        TxtAngka.Text = Hasil.ToString
+    End Sub
+
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
+        TxtAngka.Text = ""
+        angka1 = 0
+        temp = 0
+        baru = True
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs)
+
+    End Sub
+End Class
+
